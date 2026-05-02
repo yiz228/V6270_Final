@@ -59,7 +59,7 @@ The dataset is stored in the `Data./` folder.
 
 If the Shiny app is published online, the link can be added here:
 
-**Published Shiny app link:** [https://yiz228.shinyapps.io/wic_overweight_app/]
+**Published Shiny app link:** https://yiz228.shinyapps.io/wic_overweight_app/
 
 ## Required R Packages
 The following R packages are required to run the Shiny app and reproduce the analysis:
