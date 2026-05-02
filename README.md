@@ -1,0 +1,88 @@
+# V6270 Final Project
+
+## Project Title and Brief Description
+
+This repository contains my final project for VTPEH 6270. The project focuses on overweight classification among WIC toddlers using nutrition surveillance data. The final deliverables include a Shiny app, a written report, the dataset, and reference materials.
+
+## Author and Affiliation
+
+**Author:** Yi(Eve) Zhang  
+**Affiliation:** Cornell University, Master of Public Health Program
+
+## Contact Information
+
+For questions about this project, please contact:  
+**Yi(Eve) Zhang*  
+Email: yz3493@cornell.edu
+
+## Research Question and Objectives
+
+The main research question for this project is:
+
+**How does the prevalence of overweight classification among WIC toddlers vary by year, state, and race/ethnicity group?**
+
+The objectives of this project are to:
+
+1. Explore overweight prevalence among WIC toddlers across different years.
+2. Compare differences by race/ethnicity group.
+3. Visualize patterns in the data using an interactive Shiny app.
+4. Present findings in a final written report.
+
+## Data Source and Description
+
+The dataset used in this project is `Nut_Data.csv`. The analysis focuses on records related to the percentage of WIC toddlers who have an overweight classification. The data are filtered by the question category related to WIC toddler overweight classification and by race/ethnicity stratification.
+
+The dataset is stored in the `Data/` folder.
+
+## Repository Structure
+
+- `Data./`
+  - Contains the dataset used for this project.
+  - `Nut_Data.csv` is the main data file.
+
+- `Final_ShinyApp/`
+  - Contains the Shiny app file.
+  - `Final_app.R` is the main Shiny application script.
+
+- `Final_Report/`
+  - Contains the final written report and related files.
+  - `VTPEH 6270 - Final.Rmd` is the R Markdown file.
+  - `VTPEH-6270---Final.pdf` is the final report PDF.
+  - `cp06_references.bib` contains the references used in the report.
+
+## Links to Reports, Apps, and Other Deliverables
+
+- Final report PDF: `Final_Report/VTPEH-6270---Final.pdf`
+- R Markdown report file: `Final_Report/VTPEH 6270 - Final.Rmd`
+- Shiny app file: `Final_ShinyApp/Final_app.R`
+- Dataset: `Data/Nut_Data.csv`
+
+If the Shiny app is published online, the link can be added here:
+
+**Published Shiny app link:** [https://yiz228.shinyapps.io/wic_overweight_app/]
+
+## How to Run the Shiny App
+
+1. Download or clone this repository.
+2. Open `Final_ShinyApp/Final_app.R` in RStudio.
+3. Make sure the data file `Nut_Data.csv` is available in the `Data/` folder.
+4. Install the required R packages if needed:
+
+```r
+install.packages(c("shiny", "bslib", "ggplot2", "dplyr", "readr"))
+```
+Run the app using:
+```r
+shiny::runApp()
+```
+Alternatively, open `app.R` in RStudio and click Run App.
+
+## Required R Packages
+
+## AI Tool Disclosure
+ChatGPT was used to support generating R codes, organizing the Shiny App structure,and troubleshooting during the development of this project. The final content, analysis, interpretation, and decisions were edited and reviewed by the author.
+
+## References and Citations
+References used in the written report are included in: 
+- `Final_Report/`
+ - `cp06_references.bib`
