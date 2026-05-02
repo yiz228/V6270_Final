@@ -87,7 +87,7 @@ install.packages(c("shiny", "bslib", "ggplot2", "dplyr", "readr"))
 ```r
 shiny::runApp("Final_ShinyApp")
 ```
-Alternatively, open `app.R` in RStudio and click Run App.
+Alternatively, open `Final_app.R` in RStudio and click **Run App**.
 
 
 ## AI Tool Disclosure
