@@ -12,7 +12,7 @@ This repository contains my final project for VTPEH 6270. The project focuses on
 ## Contact Information
 
 For questions about this project, please contact:  
-**Yi(Eve) Zhang   
+Yi(Eve) Zhang   
 Email: yz3493@cornell.edu
 
 ## Research Question and Objectives
