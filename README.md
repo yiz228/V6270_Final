@@ -85,7 +85,7 @@ install.packages(c("shiny", "bslib", "ggplot2", "dplyr", "readr"))
 4. Install the required R packages if needed.
 5. Run the app using:
 ```r
-shiny::runApp()
+shiny::runApp("Final_ShinyApp")
 ```
 Alternatively, open `app.R` in RStudio and click Run App.
 
