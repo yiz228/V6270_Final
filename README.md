@@ -92,4 +92,4 @@ ChatGPT was used to support generating R code, organizing the Shiny app structur
 
 ## References and Citations
 References used in the written report are included in:
-- 'Final_Report/cp06_references.bib'
+- 'Final_Report/cp06_references.bib/'
