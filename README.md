@@ -12,7 +12,7 @@ This repository contains my final project for VTPEH 6270. The project focuses on
 ## Contact Information
 
 For questions about this project, please contact:  
-**Yi(Eve) Zhang*  
+**Yi(Eve) Zhang   
 Email: yz3493@cornell.edu
 
 ## Research Question and Objectives
@@ -32,7 +32,7 @@ The objectives of this project are to:
 
 The dataset used in this project is `Nut_Data.csv`. The analysis focuses on records related to the percentage of WIC toddlers who have an overweight classification. The data are filtered by the question category related to WIC toddler overweight classification and by race/ethnicity stratification.
 
-The dataset is stored in the `Data/` folder.
+The dataset is stored in the `Data./` folder.
 
 ## Repository Structure
 
@@ -55,17 +55,29 @@ The dataset is stored in the `Data/` folder.
 - Final report PDF: `Final_Report/VTPEH-6270---Final.pdf`
 - R Markdown report file: `Final_Report/VTPEH 6270 - Final.Rmd`
 - Shiny app file: `Final_ShinyApp/Final_app.R`
-- Dataset: `Data/Nut_Data.csv`
+- Dataset: `Data./Nut_Data.csv`
 
 If the Shiny app is published online, the link can be added here:
 
 **Published Shiny app link:** [https://yiz228.shinyapps.io/wic_overweight_app/]
 
+## Required R Packages
+The following R packages are required to run the Shiny app and reproduce the analysis:
+- shiny
+- bslib
+- ggplot2
+- dplyr
+- readr
+To install the required packages, run:
+```r
+install.packages(c("shiny", "bslib", "ggplot2", "dplyr", "readr"))
+```
+
 ## How to Run the Shiny App
 
 1. Download or clone this repository.
 2. Open `Final_ShinyApp/Final_app.R` in RStudio.
-3. Make sure the data file `Nut_Data.csv` is available in the `Data/` folder.
+3. Make sure the data file `Nut_Data.csv` is available in the `Data./` folder.
 4. Install the required R packages if needed:
 
 ```r
@@ -77,7 +89,6 @@ shiny::runApp()
 ```
 Alternatively, open `app.R` in RStudio and click Run App.
 
-## Required R Packages
 
 ## AI Tool Disclosure
 ChatGPT was used to support generating R codes, organizing the Shiny App structure,and troubleshooting during the development of this project. The final content, analysis, interpretation, and decisions were edited and reviewed by the author.
