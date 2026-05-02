@@ -68,6 +68,7 @@ The following R packages are required to run the Shiny app and reproduce the ana
 - ggplot2
 - dplyr
 - readr
+  
 To install the required packages, run:
 ```r
 install.packages(c("shiny", "bslib", "ggplot2", "dplyr", "readr"))
@@ -78,12 +79,8 @@ install.packages(c("shiny", "bslib", "ggplot2", "dplyr", "readr"))
 1. Download or clone this repository.
 2. Open `Final_ShinyApp/Final_app.R` in RStudio.
 3. Make sure the data file `Nut_Data.csv` is available in the `Data./` folder.
-4. Install the required R packages if needed:
-
-```r
-install.packages(c("shiny", "bslib", "ggplot2", "dplyr", "readr"))
-```
-Run the app using:
+4. Install the required R packages if needed.
+5. Run the app using:
 ```r
 shiny::runApp()
 ```
@@ -91,9 +88,8 @@ Alternatively, open `app.R` in RStudio and click Run App.
 
 
 ## AI Tool Disclosure
-ChatGPT was used to support generating R codes, organizing the Shiny App structure,and troubleshooting during the development of this project. The final content, analysis, interpretation, and decisions were edited and reviewed by the author.
+ChatGPT was used to support generating R code, organizing the Shiny app structure, and troubleshooting during the development of this project. The final content, analysis, interpretation, and decisions were edited and reviewed by the author.
 
 ## References and Citations
-References used in the written report are included in: 
-- `Final_Report/`
-  - `cp06_references.bib`
+References used in the written report are included in:
+	•	Final_Report/cp06_references.bib
