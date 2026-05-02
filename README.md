@@ -17,17 +17,20 @@ Email: yz3493@cornell.edu
 
 ## Research Question and Objectives
 
-The main research question for this project is:
+The written report focuses on the following research question:
 
-**How does the prevalence of overweight classification among WIC toddlers vary by year, state, and race/ethnicity group?**
+**Did the prevalence of overweight classification differ by race/ethnicity among children participating in WIC in the United States in 2008?**
+
+The Shiny app expands on this topic by allowing users to explore overweight classification among WIC toddlers across multiple years, states, and race/ethnicity groups.
 
 The objectives of this project are to:
 
-1. Explore overweight prevalence among WIC toddlers across different years.
-2. Compare differences by race/ethnicity group.
-3. Visualize patterns in the data using an interactive Shiny app.
-4. Present findings in a final written report.
+1. Examine racial/ethnic differences in overweight classification among WIC toddlers in 2008.
+2. Create an interactive Shiny app to explore overweight prevalence across available years.
+3. Allow users to compare patterns by state and race/ethnicity group.
+4. Present the findings and supporting visualizations in a final written report.
 
+   
 ## Data Source and Description
 
 The dataset used in this project is `Nut_Data.csv`. The analysis focuses on records related to the percentage of WIC toddlers who have an overweight classification. The data are filtered by the question category related to WIC toddler overweight classification and by race/ethnicity stratification.
