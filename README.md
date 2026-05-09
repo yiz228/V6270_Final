@@ -33,9 +33,9 @@ The objectives of this project are to:
    
 ## Data Source and Description
 
-The dataset used in this project is `Nut_Data.csv`. The analysis focuses on records related to the percentage of WIC toddlers who have an overweight classification. The data are filtered by the question category related to WIC toddler overweight classification and by race/ethnicity stratification.
+The dataset used in this project is [`Nut_Data.csv`](Data./Nut_Data.csv) The analysis focuses on records related to the percentage of WIC toddlers who have an overweight classification. The data are filtered by the question category related to WIC toddler overweight classification and by race/ethnicity stratification.
 
-The dataset is stored in the `Data./` folder.
+The dataset is stored in the [`Data./`](Data./) folder.
 
 ## Repository Structure
 
