@@ -47,7 +47,7 @@ The dataset is stored in the [`Data./`](Data./) folder.
   - Contains the Shiny app file.
   - `Final_app.R` is the main Shiny application script.
 
-- [`Final_Report/`](Final_ShinyApp/)  
+- [`Final_Report/`](Final_ShinyApp/Final_app.R) 
   - Contains the final written report and related files.
   - [`VTPEH 6270 - Final.Rmd`](Final_Report/VTPEH%206270%20-%20Final.Rmd) is the R Markdown file.
   - [`VTPEH-6270---Final.pdf`](Final_Report/VTPEH-6270---Final.pdf) is the final report PDF.
@@ -106,7 +106,7 @@ To reproduce the report, open the `.Rmd` file in RStudio and knit it to PDF. The
 ```r
 shiny::runApp("Final_ShinyApp")
 ```
-Alternatively, open `Final_app.R` in RStudio and click **Run App**.
+Alternatively, open [`Final_ShinyApp/`](Final_ShinyApp/)  in RStudio and click **Run App**.
 
 
 ## AI Tool Disclosure
