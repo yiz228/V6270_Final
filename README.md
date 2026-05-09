@@ -39,26 +39,26 @@ The dataset is stored in the [`Data./`](Data./) folder.
 
 ## Repository Structure
 
-- `Data./`
+- [`Data./`](Data./)
   - Contains the dataset used for this project.
-  - `Nut_Data.csv` is the main data file.
+  - [`Nut_Data.csv`](Data./Nut_Data.csv)` is the main data file.
 
-- `Final_ShinyApp/`
+- [`Final_ShinyApp/`](Final_ShinyApp/)  
   - Contains the Shiny app file.
   - `Final_app.R` is the main Shiny application script.
 
-- `Final_Report/`
+- [`Final_Report/`](Final_ShinyApp/)  
   - Contains the final written report and related files.
-  - `VTPEH 6270 - Final.Rmd` is the R Markdown file.
-  - `VTPEH-6270---Final.pdf` is the final report PDF.
-  - `cp06_references.bib` contains the references used in the report.
+  - [`VTPEH 6270 - Final.Rmd`](Final_Report/VTPEH%206270%20-%20Final.Rmd) is the R Markdown file.
+  - [`VTPEH-6270---Final.pdf`](Final_Report/VTPEH-6270---Final.pdf) is the final report PDF.
+  - [`cp06_references.bib`](Final_Report/cp06_references.bib) contains the references used in the report.
 
 ## Links to Reports, Apps, and Other Deliverables
 
-- Final report PDF: `Final_Report/VTPEH-6270---Final.pdf`
-- R Markdown report file: `Final_Report/VTPEH 6270 - Final.Rmd`
-- Shiny app file: `Final_ShinyApp/Final_app.R`
-- Dataset: `Data./Nut_Data.csv`
+- Final report PDF: [`Final_Report/VTPEH-6270---Final.pdf`](Final_Report/VTPEH-6270---Final.pdf)
+- R Markdown report file: [`Final_Report/VTPEH 6270 - Final.Rmd`](Final_Report/VTPEH%206270%20-%20Final.Rmd)
+- Shiny app file: [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R)
+- Dataset: [`Data./Nut_Data.csv`](Data./Nut_Data.csv)
 
 ## Published Shiny app: 
 - https://yiz228.shinyapps.io/wic_overweight_app/
@@ -81,17 +81,17 @@ This repository contains the final report and Shiny app files for the VTPEH 6270
 
 ### Repository Structure
 
-- `Final_Report/`  
+- [`Final_Report/`](Final_Report/)  
 
   Contains the final written report, the R Markdown file, the PDF report, the bibliography file, and the dataset needed to reproduce the report.
 
-- `Final_ShinyApp/`  
+- [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R)   
 
   Contains the Shiny app file and the dataset needed to run the interactive app.
 
 ### How to View the Final Report
 
-To view the final report, open the PDF file in the `Final_Report/` folder.
+To view the final report, open the PDF file in the [`Final_Report/`](Final_Report/)  folder.
 
 To reproduce the report, open the `.Rmd` file in RStudio and knit it to PDF. The required dataset and bibliography file are included in the same folder.
 ## How to Run the Shiny App
@@ -114,4 +114,4 @@ ChatGPT was used to support generating R code, organizing the Shiny app structur
 
 ## References and Citations
 References used in the written report are included in:
-- `Final_Report/cp06_references.bib`
+- [`Final_Report/cp06_references.bib`](Final_Report/cp06_references.bib)
