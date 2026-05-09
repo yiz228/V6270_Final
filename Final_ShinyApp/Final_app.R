@@ -76,7 +76,7 @@ ui <- page_fluid(
         position: relative;
         z-index: 2;
         margin: 0 0 12px 0;
-        font-size: 58px;
+        font-size: 54px;
         line-height: 1.03;
         font-weight: 800;
         color: #1f2430;
@@ -87,8 +87,8 @@ ui <- page_fluid(
         position: relative;
         z-index: 2;
         margin: 0;
-        max-width: 1000px;
-        font-size: 23px;
+        max-width: 1350px;
+        font-size: 20px;
         color: #55606f;
         font-weight: 500;
       }
@@ -148,23 +148,6 @@ ui <- page_fluid(
         background: linear-gradient(135deg, rgba(255,160,180,0.50), rgba(255,218,130,0.42));
         border-radius: 28px;
         transform: rotate(12deg);
-      }
-
-      .glass-badge {
-        position: absolute;
-        z-index: 2;
-        right: 52px;
-        top: 44px;
-        padding: 12px 18px;
-        border-radius: 18px;
-        background: rgba(255,255,255,0.30);
-        border: 1px solid rgba(255,255,255,0.5);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
-        font-size: 15px;
-        color: #3f4a5a;
-        font-weight: 700;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       }
 
       .nav-tabs {
@@ -291,41 +274,6 @@ ui <- page_fluid(
         line-height: 1.7;
       }
 
-      .sticky-author {
-        position: relative;
-        background: linear-gradient(135deg, rgba(255,244,170,0.92), rgba(255,250,204,0.85));
-        border-radius: 12px;
-        padding: 26px 28px;
-        min-height: 175px;
-        box-shadow: 0 14px 26px rgba(0,0,0,0.12);
-        transform: rotate(-1.3deg);
-        border: 1px solid rgba(0,0,0,0.05);
-      }
-
-      .sticky-author h3 {
-        margin-top: 0;
-        font-weight: 800;
-        color: #2c2c2c;
-      }
-
-      .sticky-author p {
-        font-size: 24px;
-        margin-bottom: 0;
-        color: #2c2c2c;
-      }
-
-      .sticky-pin {
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        background: #ef476f;
-        border-radius: 50%;
-        top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.20);
-      }
-
       @media (max-width: 900px) {
         .glass-hero h1 {
           font-size: 38px;
@@ -347,7 +295,6 @@ ui <- page_fluid(
     div(class = "blob blob-3"),
     div(class = "blob blob-4"),
     div(class = "blob blob-5"),
-  
     
     h1("WIC Toddler Overweight Prevalence Explorer"),
     p("Explore racial and ethnic differences in overweight prevalence among children participating in WIC.")
@@ -358,7 +305,7 @@ ui <- page_fluid(
       "About this App",
       
       layout_columns(
-        col_widths = c(4, 8),
+        col_widths = c(6, 6),
         
         card(
           card_header("Author"),
@@ -366,7 +313,7 @@ ui <- page_fluid(
             class = "about-note",
             p("Yi Zhang")
           )
-      ),
+        ),
         
         card(
           card_header("Research Question"),
@@ -631,28 +578,58 @@ server <- function(input, output) {
       return(div(class = "note-box", "At least two race/ethnicity groups are needed to run a statistical comparison."))
     }
     
+    summary_df <- data_to_test %>%
+      group_by(Stratification1) %>%
+      summarise(
+        median_prevalence = median(Data_Value, na.rm = TRUE),
+        .groups = "drop"
+      )
+    
+    highest_group <- summary_df %>%
+      filter(median_prevalence == max(median_prevalence, na.rm = TRUE)) %>%
+      slice(1)
+    
+    lowest_group <- summary_df %>%
+      filter(median_prevalence == min(median_prevalence, na.rm = TRUE)) %>%
+      slice(1)
+    
+    highest_name <- gsub("\n", " ", highest_group$Stratification1)
+    lowest_name <- gsub("\n", " ", lowest_group$Stratification1)
+    
     if (n_groups == 2) {
       wilcox_result <- wilcox.test(
         Data_Value ~ Stratification1,
         data = data_to_test
       )
       
+      p_text <- ifelse(
+        wilcox_result$p.value < 0.001,
+        "< 0.001",
+        signif(wilcox_result$p.value, 3)
+      )
+      
       return(
         tagList(
           div(
             class = "stat-box",
-            h4("Formal statistical analysis"),
-            p("Because two race/ethnicity groups were selected, a Wilcoxon rank sum test was used to compare overweight prevalence between the selected groups."),
+            h4("Test Results"),
+            p(
+              "For ", input$year, ", two race/ethnicity groups were selected, so a Wilcoxon rank sum test was used to compare overweight prevalence between the selected groups. ",
+              "Among the selected groups, the higher median overweight prevalence was observed for ",
+              highest_name, " toddlers (", round(highest_group$median_prevalence, 1), "%), while the lower median prevalence was observed for ",
+              lowest_name, " toddlers (", round(lowest_group$median_prevalence, 1), "%)."
+            ),
             tags$ul(
               tags$li(tags$strong("Test statistic: "), paste0("W = ", round(as.numeric(wilcox_result$statistic), 3))),
-              tags$li(tags$strong("P value: "), signif(wilcox_result$p.value, 3))
+              tags$li(tags$strong("P value: "), p_text)
             )
           ),
           div(
             class = "note-box",
             p(
               tags$strong("Interpretation: "),
-              "This test evaluates whether overweight prevalence differs between the two selected race/ethnicity groups. Results should be interpreted as differences in prevalence estimates, not as evidence of individual-level risk or causation."
+              "This test evaluates whether overweight prevalence differs between the two selected race/ethnicity groups. ",
+              "The result should be interpreted as a comparison of prevalence estimates across locations, not as evidence of individual-level risk or causation."
             )
           )
         )
@@ -672,11 +649,22 @@ server <- function(input, output) {
         as.numeric(kruskal_result$parameter)
     )
     
+    p_text <- ifelse(
+      kruskal_result$p.value < 0.001,
+      "< 0.001",
+      signif(kruskal_result$p.value, 3)
+    )
+    
     tagList(
       div(
         class = "stat-box",
-        h4("Formal statistical analysis"),
-        p("Because more than two race/ethnicity groups were selected, a Kruskal-Wallis rank sum test was used to compare overweight prevalence across the selected groups."),
+        h4("Test Results"),
+        p(
+          "For ", input$year, ", more than two race/ethnicity groups were selected, so a Kruskal-Wallis rank sum test was used to compare overweight prevalence across the selected groups. ",
+          "Among the selected groups, median overweight prevalence was highest among ",
+          highest_name, " toddlers (", round(highest_group$median_prevalence, 1), "%) and lowest among ",
+          lowest_name, " toddlers (", round(lowest_group$median_prevalence, 1), "%)."
+        ),
         tags$ul(
           tags$li(
             tags$strong("Test statistic: "),
@@ -687,7 +675,7 @@ server <- function(input, output) {
               round(as.numeric(kruskal_result$statistic), 3)
             )
           ),
-          tags$li(tags$strong("P value: "), signif(kruskal_result$p.value, 3)),
+          tags$li(tags$strong("P value: "), p_text),
           tags$li(tags$strong("Epsilon-squared effect size: "), round(epsilon_sq, 2))
         )
       ),
@@ -695,7 +683,12 @@ server <- function(input, output) {
         class = "note-box",
         p(
           tags$strong("Interpretation: "),
-          "This test evaluates whether overweight prevalence differs across the selected race/ethnicity groups. The effect size provides an estimate of how much variability in ranked overweight prevalence is associated with race/ethnicity. These results should be interpreted as differences in state-level prevalence estimates, not as evidence of individual-level risk or causation."
+          "The Kruskal-Wallis test evaluates whether overweight prevalence differs across the selected race/ethnicity groups. ",
+          "The statistically significant result suggests that overweight prevalence was not evenly distributed across the selected groups in ", input$year, ". ",
+          "The epsilon-squared effect size suggests that race/ethnicity explained about ",
+          round(epsilon_sq * 100, 0),
+          "% of the variability in ranked overweight prevalence estimates. ",
+          "However, these results should be interpreted cautiously because the analysis uses location-level prevalence estimates and cannot explain the causes of the differences or make conclusions about individual-level risk."
         )
       )
     )
