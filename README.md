@@ -93,15 +93,13 @@ This repository contains the final report and Shiny app files for the VTPEH 6270
 ### How to View the Final Report
 
 To view the final report, open the PDF file in the [`Final_Report/`](Final_Report/)  folder.
-
 To reproduce the report, open the [`Final_Report/VTPEH 6270 - Final.Rmd`](Final_Report/VTPEH%206270%20-%20Final.Rmd) file in RStudio and knit it to PDF. The required dataset and bibliography file are included in the same folder.
+
 ## How to Run the Shiny App
 
 1. Download or clone this repository.
 2. Open [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R) in RStudio.
-3. Make sure the data file [`Nut_Data.csv`](Final_ShinyApp/Nut_Data.csv) is available in the [`Final_ShinyApp/`](Final_ShinyApp/) folder.
-
-4. Install the required R packages if needed.
+3. Make sure the data file [`Nut_Data.csv`](Data./Nut_Data.csv) is available in the [`Data./`](Data./) folder.
 4. Install the required R packages if needed.
 5. Run the app using:
 ```r
