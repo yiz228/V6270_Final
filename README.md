@@ -75,7 +75,25 @@ To install the required packages, run:
 ```r
 install.packages(c("shiny", "bslib", "ggplot2", "dplyr", "readr"))
 ```
+## How to Use This Repository
 
+This repository contains the final report and Shiny app files for the VTPEH 6270 final project.
+
+### Repository Structure
+
+- `Final_Report/`  
+
+  Contains the final written report, the R Markdown file, the PDF report, the bibliography file, and the dataset needed to reproduce the report.
+
+- `Final_ShinyApp/`  
+
+  Contains the Shiny app file and the dataset needed to run the interactive app.
+
+### How to View the Final Report
+
+To view the final report, open the PDF file in the `Final_Report/` folder.
+
+To reproduce the report, open the `.Rmd` file in RStudio and knit it to PDF. The required dataset and bibliography file are included in the same folder.
 ## How to Run the Shiny App
 
 1. Download or clone this repository.
