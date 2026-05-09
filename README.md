@@ -98,7 +98,9 @@ To reproduce the report, open the `.Rmd` file in RStudio and knit it to PDF. The
 
 1. Download or clone this repository.
 2. Open [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R) in RStudio.
-3. Make sure the data file `Nut_Data.csv` is available in the `Data./` folder.
+3. Make sure the data file [`Nut_Data.csv`](Final_ShinyApp/Nut_Data.csv) is available in the [`Final_ShinyApp/`](Final_ShinyApp/) folder.
+
+4. Install the required R packages if needed.
 4. Install the required R packages if needed.
 5. Run the app using:
 ```r
