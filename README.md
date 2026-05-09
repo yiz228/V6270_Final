@@ -86,9 +86,9 @@ This repository contains the final report and Shiny app files for the VTPEH 6270
 
   Contains the final written report, the R Markdown file, the PDF report, the bibliography file, and the dataset needed to reproduce the report.
 
-- [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R)   
+- [`Final_ShinyApp/`](Final_ShinyApp/) 
 
-  Contains the Shiny app file and the dataset needed to run the interactive app.
+  Contains the Shiny app file needed to run the interactive app.
 
 ### How to View the Final Report
 
