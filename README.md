@@ -39,15 +39,16 @@ The dataset is stored in the [`Data./`](Data./) folder.
 
 ## Repository Structure
 
-- [`Data./`](Data./)
+- [`Data./`](Data./) Folder
   - Contains the dataset used for this project.
   - [`Nut_Data.csv`](Data./Nut_Data.csv)` is the main data file.
 
-- [`Final_ShinyApp/`](Final_ShinyApp/)  
+- [`Final_ShinyApp/`](Final_ShinyApp/)  Folder
   - Contains the Shiny app file.
-  - `Final_app.R` is the main Shiny application script.
+  - [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R)
+- Dataset: [`Data./Nut_Data.csv`](Data./Nut_Data.csv) is the main Shiny application script.
 
-- [`Final_Report/`](Final_ShinyApp/Final_app.R) 
+- [`Final_Report/`](Final_Report/) Floder
   - Contains the final written report and related files.
   - [`VTPEH 6270 - Final.Rmd`](Final_Report/VTPEH%206270%20-%20Final.Rmd) is the R Markdown file.
   - [`VTPEH-6270---Final.pdf`](Final_Report/VTPEH-6270---Final.pdf) is the final report PDF.
@@ -93,7 +94,7 @@ This repository contains the final report and Shiny app files for the VTPEH 6270
 
 To view the final report, open the PDF file in the [`Final_Report/`](Final_Report/)  folder.
 
-To reproduce the report, open the `.Rmd` file in RStudio and knit it to PDF. The required dataset and bibliography file are included in the same folder.
+To reproduce the report, open the [`Final_Report/VTPEH 6270 - Final.Rmd`](Final_Report/VTPEH%206270%20-%20Final.Rmd) file in RStudio and knit it to PDF. The required dataset and bibliography file are included in the same folder.
 ## How to Run the Shiny App
 
 1. Download or clone this repository.
@@ -106,7 +107,7 @@ To reproduce the report, open the `.Rmd` file in RStudio and knit it to PDF. The
 ```r
 shiny::runApp("Final_ShinyApp")
 ```
-Alternatively, open [`Final_ShinyApp/`](Final_ShinyApp/)  in RStudio and click **Run App**.
+Alternatively, open [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R) in RStudio and click **Run App**.
 
 
 ## AI Tool Disclosure
