@@ -97,7 +97,7 @@ To reproduce the report, open the `.Rmd` file in RStudio and knit it to PDF. The
 ## How to Run the Shiny App
 
 1. Download or clone this repository.
-2. Open `Final_ShinyApp/Final_app.R` in RStudio.
+2. Open [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R) in RStudio.
 3. Make sure the data file `Nut_Data.csv` is available in the `Data./` folder.
 4. Install the required R packages if needed.
 5. Run the app using:
