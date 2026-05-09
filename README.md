@@ -99,7 +99,7 @@ To reproduce the report, open the [`Final_Report/VTPEH 6270 - Final.Rmd`](Final_
 
 1. Download or clone this repository.
 2. Open [`Final_ShinyApp/Final_app.R`](Final_ShinyApp/Final_app.R) in RStudio.
-3. Make sure the data file [`Nut_Data.csv`](Data./Nut_Data.csv) is available in the [`Data./`](Data./) folder.
+3. Make sure the data file [`Nut_Data.csv`](Data./Nut_Data.csv) is available.
 4. Install the required R packages if needed.
 5. Run the app using:
 ```r
